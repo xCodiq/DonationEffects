@@ -1,0 +1,22 @@
+name: DonationEffects
+version: ${project.version}
+main: me.xcodiq.donationeffects.Core
+authors: [xCodiq]
+description: Give online players effects every time someone donates
+website: xcodiq.carbonmade.com
+
+commands:
+  donation:
+    description: Give online players effects every time someone donates
+    aliases: [donated]
+    permission: donationeffects.use
+
+permissions:
+  donationeffects.admin:
+    description: Get access to every command
+    default: op
+    children:
+      donationeffects.help: true
+      donationeffects.reload: true
+      donationeffects.use: true
+      donationeffects.about: true

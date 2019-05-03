@@ -1,0 +1,30 @@
+effects:
+  one:
+    type: SPEED
+    time: 120
+    level: 2
+  two:
+    type: NIGHT_VISION
+    time: 120
+    level: 2
+  three:
+    type: JUMP
+    time: 120
+    level: 2
+  four:
+    type: FAST_DIGGING
+    time: 120
+    level: 2
+
+messages:
+  titles:
+    title: "&a&l[!] DONATION [!]"
+    subtitle: "&7&o(( &f&o%target% &7&ohas just donated, you got effects! ))"
+    fadeIn: 5
+    stay: 20
+    fadeOut: 5
+  donated:
+    - " "
+    - "         &f<< &2%target% &ahas &2donated &aso everyone gets effects! &f>>"
+    - " &7&o(( TIP: They &f&odonated &7at our shop &a&ohttp://shop.yourstore.net&7&o! ))"
+    - " "
