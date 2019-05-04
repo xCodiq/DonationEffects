@@ -15,10 +15,11 @@ public class EffectLoader {
         FileConfiguration config = Core.getInstance().getConfig();
         for (String key : config.getConfigurationSection("effects").getKeys(false)) {
             Effect effect;
+            String id = key.toLowerCase();
             PotionEffectType potionEffectType = PotionEffectType.getByName(config.getString("effects." + key + ".type"));
             int level = config.getInt("effects." + key + ".level");
             int time = config.getInt("effects." + key + ".time");
-            effect = new Effect(potionEffectType, time * 20, level);
+            effect = new Effect(id, potionEffectType, level, time * 20);
             effectList.add(effect);
         }
     }

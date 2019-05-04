@@ -3,12 +3,10 @@ package me.xcodiq.donationeffects.commands;
 import me.xcodiq.donationeffects.Core;
 import me.xcodiq.donationeffects.commands.base.CommandBase;
 import me.xcodiq.donationeffects.utilities.ChatUtils;
+import me.xcodiq.donationeffects.utilities.PluginUtils;
 import org.bukkit.command.CommandSender;
-import org.yaml.snakeyaml.error.YAMLException;
+import org.bukkit.plugin.Plugin;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.util.Arrays;
-import java.util.logging.Level;
 
 public class ReloadCommand extends CommandBase {
 
@@ -18,12 +16,9 @@ public class ReloadCommand extends CommandBase {
 
     @Override
     public void execute(CommandSender sender, String[] args) throws NotImplementedException {
-        try {
-            Core.getInstance().reloadConfig();
-            sender.sendMessage(ChatUtils.format("&a&l[!] &aSuccessfully reloaded all configuration files"));
-        } catch (YAMLException e) {
-            sender.sendMessage(ChatUtils.format("&c&l[!] &cFailed to reload: " + e.getMessage()));
-            Core.getInstance().getLogger().log(Level.WARNING, "YAML: " + Arrays.toString(e.getStackTrace()));
-        }
+        Core.getInstance().reloadConfig();
+        Plugin plugin = PluginUtils.getPluginByName("DonationEffects");
+        PluginUtils.restartPlugin(plugin);
+        sender.sendMessage(ChatUtils.format("&a&l[!] &aSuccessfully reloaded all configuration files"));
     }
 }

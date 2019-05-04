@@ -4,14 +4,23 @@ import org.bukkit.potion.PotionEffectType;
 
 public class Effect {
 
+    private String id;
     private PotionEffectType type;
-    private int time;
     private int level;
+    private int time;
 
-    public Effect(PotionEffectType type, int time, int level) {
+    public Effect(String id, PotionEffectType type, int level, int time) {
+        this.id = id;
         this.type = type;
-        this.time = time;
         this.level = level;
+        this.time = time;
+    }
+
+    /**
+     * @return PotionEffect unique Id
+     */
+    public String getId() {
+        return id;
     }
 
     /**
@@ -22,17 +31,17 @@ public class Effect {
     }
 
     /**
-     * @return PotionEffect duration in seconds
-     */
-    public int getTime() {
-        return time;
-    }
-
-    /**
      * @return PotionEffect level
      */
     public int getLevel() {
         return level;
+    }
+
+    /**
+     * @return PotionEffect duration in seconds
+     */
+    public int getTime() {
+        return time;
     }
 
 }
