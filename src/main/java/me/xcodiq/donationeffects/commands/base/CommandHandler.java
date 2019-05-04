@@ -104,10 +104,9 @@ public class CommandHandler implements CommandExecutor, TabCompleter, IHandler {
                     Bukkit.broadcastMessage(ChatUtils.format(lines).replaceAll("%target%", target.getName()));
                 }
                 for (Player players : Bukkit.getOnlinePlayers()) {
-                    Core.getInstance().sendTitle(players, ChatUtils.format(config.getString("messages.titles.title")
-                                    .replaceAll("%target%", target.getName())), ChatUtils.format(config.getString("messages.titles.subtitle")
-                                    .replaceAll("%target%", target.getName())), config.getInt("titles.fadeIn"),
-                            config.getInt("titles.stay"), config.getInt("titles.fadeOut"));
+                    players.sendTitle(ChatUtils.format(config.getString("messages.titles.title")
+                            .replaceAll("%target%", target.getName())), ChatUtils.format(config.getString("messages.titles.subtitle")
+                            .replaceAll("%target%", target.getName())));
                     for (Effect effect : Core.getInstance().getEffectLoader().getEffectList()) {
                         players.addPotionEffect(new PotionEffect(effect.getType(), effect.getTime(), effect.getLevel()), true);
                     }

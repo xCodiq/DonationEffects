@@ -20,9 +20,6 @@ messages:
   titles:
     title: "&a&l[!] DONATION [!]"
     subtitle: "&7&o(( &f&o%target% &7&ohas just donated, you got effects! ))"
-    fadeIn: 5
-    stay: 20
-    fadeOut: 5
   donated:
     - " "
     - "         &f<< &2%target% &ahas &2donated &aso everyone gets effects! &f>>"
