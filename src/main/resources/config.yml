@@ -18,10 +18,10 @@ effects:
 
 messages:
   titles:
-    title: "&a&l[!] DONATION [!]"
+    title: "&b&l[!] DONATION [!]"
     subtitle: "&7&o(( &f&o%target% &7&ohas just donated, you got effects! ))"
   donated:
     - " "
-    - "         &f<< &2%target% &ahas &2donated &aso everyone gets effects! &f>>"
-    - " &7&o(( TIP: They &f&odonated &7at our shop &a&ohttp://shop.yourstore.net&7&o! ))"
+    - "         &f<< &3%target% &bhas &3donated &bso everyone gets effects! &f>>"
+    - " &7&o(( TIP: They &f&odonated &7at our shop &b&ohttp://shop.yourstore.net&7&o! ))"
     - " "

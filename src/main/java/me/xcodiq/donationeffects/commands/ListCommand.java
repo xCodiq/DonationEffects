@@ -22,6 +22,6 @@ public class ListCommand extends CommandBase {
         for (Effect effect : Core.getInstance().getEffectLoader().getEffectList()) {
             list.add(effect.getType().getName());
         }
-        sender.sendMessage(ChatUtils.format("&a&l[!] &aEffects: " + String.join("&7, &a", list)));
+        sender.sendMessage(ChatUtils.format("&b&l[!] &bEffects: " + String.join("&7, &b", list)));
     }
 }

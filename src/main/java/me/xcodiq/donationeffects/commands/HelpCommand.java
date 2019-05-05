@@ -16,12 +16,12 @@ public class HelpCommand extends CommandBase {
     public void execute(CommandSender sender, String[] args) throws NotImplementedException {
         sender.sendMessage(ChatUtils.format("&8&m-+----------------------------------+-"));
         sender.sendMessage(ChatUtils.format(" "));
-        sender.sendMessage(ChatUtils.format("&a&l[!] &aAvailable Commands"));
+        sender.sendMessage(ChatUtils.format("&b&l[!] &bAvailable Commands"));
         sender.sendMessage(ChatUtils.format(" "));
         for (CommandBase command : CommandHandler.getInstance().getCommands()) {
-            sender.sendMessage(ChatUtils.format(" &2× &a&l/donation " + command.getName() + " &7" + command.getDescription()));
+            sender.sendMessage(ChatUtils.format(" &3× &b&l/donation " + command.getName() + " &7" + command.getDescription()));
         }
-        sender.sendMessage(ChatUtils.format(" &2× &a&l/donation <player> &7Announce someone donated"));
+        sender.sendMessage(ChatUtils.format(" &3× &b&l/donation <player> &7Announce someone donated"));
         sender.sendMessage(ChatUtils.format(" "));
         sender.sendMessage(ChatUtils.format("&8&m-+----------------------------------+-"));
     }

@@ -19,6 +19,6 @@ public class ReloadCommand extends CommandBase {
         Core.getInstance().reloadConfig();
         Plugin plugin = PluginUtils.getPluginByName("DonationEffects");
         PluginUtils.restartPlugin(plugin);
-        sender.sendMessage(ChatUtils.format("&a&l[!] &aSuccessfully reloaded all configuration files"));
+        sender.sendMessage(ChatUtils.format("&b&l[!] &bSuccessfully reloaded all configuration files"));
     }
 }

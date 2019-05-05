@@ -74,7 +74,7 @@ public class CommandHandler implements CommandExecutor, TabCompleter, IHandler {
             return true;
         }
         if (args.length == 0 || args[0].isEmpty()) {
-            sender.sendMessage(ChatUtils.format("&a&l[!] &aType &n/donation help&a for help"));
+            sender.sendMessage(ChatUtils.format("&b&l[!] &bType &n/donation help&b for help"));
         } else if (args.length == 1) {
             if (!sender.hasPermission("donationeffects.use")) {
                 sender.sendMessage(ChatUtils.format("&c&l[!] &cYou don't have access to that command"));
