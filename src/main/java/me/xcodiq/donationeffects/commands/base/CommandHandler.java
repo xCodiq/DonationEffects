@@ -75,7 +75,7 @@ public class CommandHandler implements CommandExecutor, TabCompleter, IHandler {
         }
         if (args.length == 0 || args[0].isEmpty()) {
             sender.sendMessage(ChatUtils.format("&b&l[!] &bType &n/donation help&b for help"));
-        } else if (args.length == 1) {
+        } else if (args.length == 2) {
             if (!sender.hasPermission("donationeffects.use")) {
                 sender.sendMessage(ChatUtils.format("&c&l[!] &cYou don't have access to that command"));
                 return true;
@@ -101,12 +101,12 @@ public class CommandHandler implements CommandExecutor, TabCompleter, IHandler {
                     }
                     return true;
                 } else for (String lines : config.getStringList("messages.donated")) {
-                    Bukkit.broadcastMessage(ChatUtils.format(lines).replaceAll("%target%", target.getName()));
+                    Bukkit.broadcastMessage(ChatUtils.format(lines).replaceAll("%target%", target.getName()).replaceAll("%name%", args[1]));
                 }
                 for (Player players : Bukkit.getOnlinePlayers()) {
                     players.sendTitle(ChatUtils.format(config.getString("messages.titles.title")
-                            .replaceAll("%target%", target.getName())), ChatUtils.format(config.getString("messages.titles.subtitle")
-                            .replaceAll("%target%", target.getName())));
+                            .replaceAll("%target%", target.getName()).replaceAll("%name%", args[1])), ChatUtils.format(config.getString("messages.titles.subtitle")
+                            .replaceAll("%target%", target.getName()).replaceAll("%name%",args[1])));
                     for (Effect effect : Core.getInstance().getEffectLoader().getEffectList()) {
                         players.addPotionEffect(new PotionEffect(effect.getType(), effect.getTime(), effect.getLevel()), true);
                     }
